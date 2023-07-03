@@ -4,11 +4,34 @@ const btncheck = document.querySelector("#btncheck")
 const noOfNotes = document.querySelectorAll(".noofnotes")
 const notes =[2000, 500, 100,20, 10,5,1]
 const errorMsg= document.querySelector("#errorMsg")
+const btnNext = document.querySelector("#btnNext")
+const afterNext =document.querySelector("#afterNext")
+const billAmtErrorMsg = document.querySelector("#billAmountErrorMsg")
+afterNext.style.display="none"
+billAmtErrorMsg.style.display="none"
 
+
+btnNext.addEventListener("click",
+function nextBtnClicked()
+{ 
+    billAmtErrorMsg.style.display="none";
+    let billAmountValue = Number(billAmount.value);
+    if (billAmountValue > 0)
+    {
+        afterNext.style.display="block"
+        btnNext.style.display="none"
+    }
+    else
+    {
+        billAmtErrorMsg.style.display="block"
+        
+    }
+})
 
 btncheck.addEventListener("click", function CheckButtonClicked()
 {
     console.log("clicked")
+    billAmtErrorMsg.style.display="none"
     errorMsg.style.display="none";
     let billAmountValue = Number(billAmount.value);
     let cashGivenValue = Number(cashGiven.value);
@@ -47,6 +70,7 @@ function Validate(change)
 }
 function DisplayErrorMessage(msg)
 {
+    console.log(msg);
     errorMsg.style.display="block";
     errorMsg.innerHTML = msg;
 }

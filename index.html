@@ -13,9 +13,12 @@
    
     <p>Enter the bill amount and the cash Amount given by the Customer 
         to know the minimum number of notes to be returned.</p>
-        <label for="billAmount">Bill Amount:</label>
+        <label class ="lblText" for="billAmount">Bill Amount:</label>
         <input type="number" id="billAmount"/>
-        <label for="cashGiven">Cash Given:</label>
+        <button id="btnNext">Next</button>
+        <p id="billAmountErrorMsg">Enter Valid bill Amount</p>
+        <div id="afterNext">
+        <label class ="lblText" for="cashGiven">Cash Given:</label>
         <input type="number" id="cashGiven"/>
         <button id="btncheck">Check</button>
         <p id="errorMsg"></p>
@@ -48,6 +51,8 @@
            
            
         </table>
+        </div>
+        
     <script src="/app.js"></script>
 </body>
 </html>
